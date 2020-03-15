@@ -18,6 +18,9 @@ Recyclers and consumers don't have definite information about the packaging/ was
 ### solution
 We attach rfid-chips to packaging and store metainformation on it. Metainformation is e.g. `oem`, `used energy`, `material mix`, ...
 
+![](img/sgi2020.png)
+![](img/sgi2020_2.jpg)
+
 The possibility to cryptographically sign the data is also implemented. Datastructure looks like:
 ```js
 {
