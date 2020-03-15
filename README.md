@@ -47,8 +47,11 @@ The current approach of using rfid-chips has the problem that it actually produc
 You can find the presentation [here](garbage-team-presentation.pdf)
 
 ## team members
-| github handle                               | responsibility         |
-| :------------------------------------------ | :--------------------- |
-| [Urhengulas](https://github.com/Urhengulas) | rfid, cryptography     |
-| [m-lukas](https://github.com/m-lukas)       | electrical engineering |
+| github handle                               | responsibility               |
+| :------------------------------------------ | :--------------------------- |
+| Andrea                                      | hardware design + assembling |
+| [m-lukas](https://github.com/m-lukas)       | electrical engineering       |
+| Natalia                                     | presentation, design         |
+| [simonheu](https://github.com/simonheu)     | hardware design + assembling |
+| [Urhengulas](https://github.com/Urhengulas) | rfid, cryptography           |
 
