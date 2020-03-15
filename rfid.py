@@ -5,21 +5,29 @@ from mfrc522 import SimpleMFRC522
 
 reader = SimpleMFRC522()
 
+
+def write_data(payload: dict):
+    data = json.dumps({
+        "payload": payload
+    })
+    reader.write(data)
+
+    id, data = reader.read()
+    return id, data
+
+
 if __name__ == "__main__":
     try:
         while True:
             option = input("What do you want to do? (r)ead (w)rite: ")
             if option == "w":
-                data = json.dumps({
+                id, data = write_data({
                     "material": input("Material: "),
                     "OEM": input("OEM: "),
                 })
-                reader.write(data)
-                id, _ = reader.read()
                 print(f"Written {data} on chip (id={id})")
             elif option == "r":
                 id, data = reader.read()
-                print(f"id={hex(id)} data={data}")
+                print(f"id={id} data={data}")
     finally:
         GPIO.cleanup()
-

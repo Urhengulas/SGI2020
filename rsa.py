@@ -35,13 +35,15 @@ padding = padding.PSS(
     salt_length=padding.PSS.MAX_LENGTH
 )
 
+
 def sign_data(data: dict) -> dict:
-    data["signature"] =  private_key.sign(
+    data["signature"] = private_key.sign(
         data=json.dumps(data["payload"]).encode("utf-8"),
         padding=padding,
         algorithm=algorithm,
     )
     return data
+
 
 def verify_data(data: dict) -> bool:
     try:
@@ -55,6 +57,7 @@ def verify_data(data: dict) -> bool:
         return False
     else:
         return True
+
 
 if __name__ == "__main__":
     data = {
@@ -78,4 +81,3 @@ if __name__ == "__main__":
     changed_data = signed_data.copy()
     changed_data["payload"]["corrupted"] = True
     print("passed") if verify_data(changed_data) == False else print("failed")
-
